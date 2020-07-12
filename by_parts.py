@@ -1,6 +1,8 @@
 # inputs: forces, distances, distances of reactive forces
 def inputs():
+    #user inputs force in KG which is transformed into Newtons
     force = int(input('Input force in Kg: ')) * 10
+    #user inputs a ratio (input as 2 digits separated by a coma: e.g 2, 1) to evaluate where the force is placed on the beam relative to the contact points 
     ratio = input(
         'Input two numbers to represent ratio of distance to support: ').split(', ')
     ratio = [int(x) for x in ratio]
@@ -30,6 +32,7 @@ def calculate_reaction_force_pa(force, ratio):
 
 
 def end_or_repeat():
+    #user decides to repeat or end program
     v = input('Do you want to try again y/n? ')
     if v == 'Y' or v == 'y':
         inputs()
