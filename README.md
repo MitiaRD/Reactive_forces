@@ -5,5 +5,5 @@ The solid body mechanics 'method by sections' is a method of calculating forces 
 calculate the reactive forces that a single beam experiences once a force is applied. Essentially we can imagine our beam to be a simplified "bridge" and our aim is to calculate
 the forces exerted on the bridges contact points (e.i the ground). 
 
-This is simply calculated by initially 'breaking' the beam at the point of applied force and calculating the moment about one connection point (moment = force * distance) 
+This is calculated by initially 'breaking' the beam at the point of applied force and calculating the moment about one connection point (moment = force * distance) 
 upon calculating this we can then determine the reaction forces in either contact point.
