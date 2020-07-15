@@ -18,13 +18,15 @@ def inputs():
 
 
 def calculate_reaction_force_pb(force, ratio):
-    # calculating force at point A left of force applied, taking clockwise moment to be positive
+    # calculating force at point A left of force applied, taking clockwise moment to be positive (F=Force applied, AB=distance point A-B, AC=Distance point A to applied force)
+    #[ΣMoments(a) = 0]: -F*AC + Reaction_B*AB = 0 ∴ Reaction_B = (F*AC)/(AB):
     reaction_b = (force * ratio[0]) / (ratio[1]+ratio[0])
     return reaction_b
 
 
 def calculate_reaction_force_pa(force, reaction_b):
-    # set the force applied in the centre of the beam for simplicity
+    # (Fy= force in y axis)
+    #[ΣFy = 0]: Reaction_A + Reaction_B - Force = 0 ∴ Reaction_A = Force - Reaction_B:
     reaction_a = force - reaction_b
     return reaction_a
 
