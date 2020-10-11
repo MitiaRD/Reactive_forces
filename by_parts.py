@@ -1,4 +1,4 @@
-# inputs: forces, distances, distances of reactive forces
+# inputs: forces, distances, distances of reactive forces.
 def inputs():
     # user inputs force in KG which is transformed into Newtons
     force = int(input('Input force in Kg: ')) * 10
@@ -6,7 +6,7 @@ def inputs():
     ratio = input(
         'Input two numbers to represent ratio of distance to support: ').split(', ')
     ratio = [int(x) for x in ratio]
-    
+
     reaction_b = calculate_reaction_force_pb(force, ratio)
     reaction_a = calculate_reaction_force_pa(force, reaction_b)
 
@@ -19,14 +19,14 @@ def inputs():
 
 def calculate_reaction_force_pb(force, ratio):
     # calculating force at point A left of force applied, taking clockwise moment to be positive (F=Force applied, AB=distance point A-B, AC=Distance point A to applied force)
-    #[ΣMoments(a) = 0]: -F*AC + Reaction_B*AB = 0 ∴ Reaction_B = (F*AC)/(AB):
+    # [ΣMoments(a) = 0]: -F*AC + Reaction_B*AB = 0 ∴ Reaction_B = (F*AC)/(AB):
     reaction_b = (force * ratio[0]) / (ratio[1]+ratio[0])
     return reaction_b
 
 
 def calculate_reaction_force_pa(force, reaction_b):
     # (Fy= force in y axis)
-    #[ΣFy = 0]: Reaction_A + Reaction_B - Force = 0 ∴ Reaction_A = Force - Reaction_B:
+    # [ΣFy = 0]: Reaction_A + Reaction_B - Force = 0 ∴ Reaction_A = Force - Reaction_B:
     reaction_a = force - reaction_b
     return reaction_a
 
